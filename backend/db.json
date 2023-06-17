@@ -1,0 +1,15 @@
+{
+  "User": [
+    {
+      "nom": "azert",
+      "familyName": "erdtfygu",
+      "birthday": "17juin2000",
+      "adress": "kairouan",
+      "userType": "ADMIN",
+      "email": "sarra.belhadj@sofrecom.com",
+      "motDePasse": "123456767890",
+      "phoneNumber": "12345678",
+      "id": 1
+    }
+  ]
+}
