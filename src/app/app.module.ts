@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginComponent } from './login/login.component';
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,6 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule
     
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

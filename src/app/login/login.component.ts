@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   loginNow(): void {
     this.service.login(this.user).subscribe((data) => {
       this.message = data;
-      //console.log(data.token)
       localStorage.setItem('token',data.token);
       this.service.parseJwt();
       })
