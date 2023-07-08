@@ -17,6 +17,8 @@ import { SignupComponent } from './signup/signup.component';
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
 import { PostsComponent } from './posts/posts.component';
+import { CreatePublicationComponent } from './create-publication/create-publication.component';
+import { PublicationListComponent } from './publication-list/publication-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { PostsComponent } from './posts/posts.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    PostsComponent
+    PostsComponent,
+    CreatePublicationComponent,
+    PublicationListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,117 @@
+<main>
+
+    <section class="section section-shaped section-lg">
+
+      <div class="shape shape-style-1 bg-gradient-default">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+      </div>
+
+<div class="col-md-6 offset-md-3">
+
+
+
+
+    <br>
+
+
+
+
+    <h3 style="color:#FFFFFF" > Créaction Publication  </h3>
+
+
+
+
+    <form (ngSubmit) = "onSubmit()">
+
+
+
+
+        <div class="form-group">
+
+
+
+
+            <label> Nom & Prénom </label>
+
+
+
+
+            <input type="text" class ="form-control" id = "nom_prenom"
+
+              [(ngModel)] = "publication.nom_prenom" name = "nom_prenom" placeholder="tapez votre nom & prénom " >
+
+
+
+
+        </div>
+
+
+
+
+        <div class="form-group">
+
+
+
+
+            <label> Centenu publication </label>
+
+
+
+
+            <input type="text" class ="form-control" id = "publication"
+
+            [(ngModel)] = "publication.contenu" name = "publication" placeholder="centenu publication" >
+
+
+
+
+        </div>
+
+
+
+
+        <br>
+
+   
+
+        <input type="checkbox" name="check-box" /><span class="form-check-label" for="flexCheckDefault">Je certifie que cet avis reflète ma propre expérience et ma propre opinion sur cet établissement et que je ne suis pas lié(e) personnellement ni professionnellement à cet établissement.</span>
+
+
+
+
+
+        <br>
+
+
+
+
+    <button type="button" class="btn btn-secondary btn-lg" type="submit">Ajouter</button>
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+    </div>
