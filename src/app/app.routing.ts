@@ -10,6 +10,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { PublicationListComponent } from './publication-list/publication-list.component';
 import { CreatePublicationComponent } from './create-publication/create-publication.component';
+import { UpdatePublicationComponent } from './update-publication/update-publication.component';
+import { PublicationDetailsComponent } from './publication-details/publication-details.component';
 
 const routes: Routes =[
     { path: 'user-profile/:id',     component: ProfileComponent },
@@ -19,7 +21,8 @@ const routes: Routes =[
     { path: 'post',          component: PostsComponent },
     {path: 'publications', component: PublicationListComponent},
     {path: 'create-publication', component: CreatePublicationComponent},
-
+    {path: 'update-publication/:idPublication', component: UpdatePublicationComponent},
+    {path: 'publication-details/:idPublication', component: PublicationDetailsComponent},
     { path: '', redirectTo: 'landing', pathMatch: 'full' }
 ];
 

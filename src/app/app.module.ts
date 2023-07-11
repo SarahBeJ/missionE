@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import { PostsComponent } from './posts/posts.component';
 import { CreatePublicationComponent } from './create-publication/create-publication.component';
 import { PublicationListComponent } from './publication-list/publication-list.component';
+import { UpdatePublicationComponent } from './update-publication/update-publication.component';
+import { PublicationDetailsComponent } from './publication-details/publication-details.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PublicationListComponent } from './publication-list/publication-list.co
     LoginComponent,
     PostsComponent,
     CreatePublicationComponent,
-    PublicationListComponent
+    PublicationListComponent,
+    UpdatePublicationComponent,
+    PublicationDetailsComponent
   ],
   imports: [
     BrowserModule,
