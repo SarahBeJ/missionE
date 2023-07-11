@@ -82,11 +82,11 @@
 
                         <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
 
-                        <div class="like p-2 cursor"><i class="fa fa-pencil"></i><span class="ml-1">Update</span></div>
+                        <div class="like p-2 cursor"><i class="fa fa-pencil"></i><span (click)="updatePublication(publication.idPublication)" class="ml-1">Update</span></div>
 
-                        <div class="like p-2 cursor"><i class="fa fa-eye"></i><span class="ml-1">View</span></div>
+                        <div class="like p-2 cursor"><i class="fa fa-eye"></i><span (click)="publicationDetails(publication.idPublication)" class="ml-1">View</span></div>
 
-                        <div class="like p-2 cursor"><i class="fa fa-trash"></i><span class="ml-1">Supprimer</span></div>
+                        <div class="like p-2 cursor"><i class="fa fa-trash"></i><span (click)="deletePublication(publication.idPublication)" class="ml-1">Supprimer</span></div>
 
 
 
