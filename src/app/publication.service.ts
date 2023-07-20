@@ -14,6 +14,7 @@ export class PublicationService {
     return this.httpClient.get<Publication[]>(`${this.baseURL}`);
   }
   createPublication(publication : Publication): Observable<Object>{
+    console.log("test")
     return this.httpClient.post(`${this.baseURL}`, publication);
   }
   getPublicationById(idPublication: number): Observable<Publication>{

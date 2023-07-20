@@ -24,8 +24,9 @@ export class CreatePublicationComponent implements OnInit {
   ngOnInit(): void {
   }
   savePublication(){
+    
     this.publicationService.createPublication(this.publication).subscribe( data =>{
-      console.log(data);
+      console.log("data");
       this.goToPublicationList();
       Notiflix.Notify.success('post add successfully',  {
         ID: 'MKA',
