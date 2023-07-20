@@ -1,7 +1,7 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
   <div class="container">
     <a class="navbar-brand mr-lg-5" [routerLink]="['/landing']">
-      camping
+      <img src="./assets/img/brand/argon-white.png">
     </a>
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
@@ -63,6 +63,12 @@
           </div>
         </li>
         <li class="nav-item dropdown">
+          <a class="nav-link no-caret"  role="button">
+            <i class="ni ni-collection d-lg-none"></i>
+            <a [routerLink]="['/comping/list']" class="dropdown-item"><span class="nav-link-inner--text">Gestion voyage </span></a>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Examples</span>
@@ -75,13 +81,6 @@
             <a [routerLink]="['/post']" class="dropdown-item">comments</a>
 
           </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="ni ni-collection d-lg-none"></i>
-            <span [routerLink]="['/publications']" class="nav-link-inner--text">Feedbacks</span>
-          </a>
-        
         </li>
       </ul>
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">

@@ -17,10 +17,6 @@ import { SignupComponent } from './signup/signup.component';
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
 import { PostsComponent } from './posts/posts.component';
-import { CreatePublicationComponent } from './create-publication/create-publication.component';
-import { PublicationListComponent } from './publication-list/publication-list.component';
-import { UpdatePublicationComponent } from './update-publication/update-publication.component';
-import { PublicationDetailsComponent } from './publication-details/publication-details.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +27,7 @@ import { PublicationDetailsComponent } from './publication-details/publication-d
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    PostsComponent,
-    CreatePublicationComponent,
-    PublicationListComponent,
-    UpdatePublicationComponent,
-    PublicationDetailsComponent
+    PostsComponent
   ],
   imports: [
     BrowserModule,

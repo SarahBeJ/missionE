@@ -1,0 +1,37 @@
+<main>
+    <section class="section section-shaped">
+        <a href="#/comping/add"><button class="btn btn-success pull-right" > Add new Comping</button></a>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-body px-lg-5 py-lg-5">
+               
+                <table>
+                    <thead>
+                        <tr class="row">
+                            <th class="col-4">driver</th>
+                            <th class="col-2">duration</th>
+                            <th class="col-2">placeNumber</th>
+                            <th class="col-2">start</th>
+                            <th class="col-2">end</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let comping of compingList" class="row">
+                            <td class="col-4">{{ comping.driver.familyName }} {{ comping.driver.firstName }}</td>
+                            <td class="col-2">{{ comping.duration }}</td>
+                            <td class="col-2">{{ comping.placeNumber }}</td>
+                            <td class="col-2">{{ comping.start| date: 'dd/MM/yyyy' }}</td>
+                            <td class="col-2">{{ comping.end | date: 'dd/MM/yyyy'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
