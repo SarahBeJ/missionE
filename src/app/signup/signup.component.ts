@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
     let resp = this.service.register(this.user);
     resp.subscribe((data) => {
       this.message = data;
-      localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('loggedIn','true');
       localStorage.setItem('currentUserId', this.user.idUser.toString());
 
     });

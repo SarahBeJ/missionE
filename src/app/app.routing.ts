@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
-import { PostsComponent } from './posts/posts.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 
@@ -14,8 +13,6 @@ const routes: Routes =[
     { path: 'register',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'login',          component: LoginComponent },
-    { path: 'post',          component: PostsComponent },
-
     { path: '', redirectTo: 'landing', pathMatch: 'full' }
 ];
 
