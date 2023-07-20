@@ -22,8 +22,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     const userId = this.acti.snapshot.params['id'];
     this.userService.getUserById(userId).subscribe(
-      (userI : user) => {
-        console.log(userI);
+      (userI) => {
         this.user = userI;
       },
       (error) => {

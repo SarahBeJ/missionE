@@ -69,10 +69,10 @@
           </a>
           <div class="dropdown-menu">
             <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile/:id']" class="dropdown-item">Profile</a>
+            <a [routerLink]="['/user-profile/'+profil()]" class="dropdown-item" *ngIf="showProfil()">Profile</a>
             <a [routerLink]="['/login']" class="dropdown-item">Login</a>
             <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-            <a [routerLink]="['/post']" class="dropdown-item">comments</a>
+            <a [routerLink]="['/landing']" class="dropdown-item" onclick="deconnexion()">Déconnexion</a>
 
           </div>
         </li>

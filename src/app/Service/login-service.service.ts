@@ -29,7 +29,7 @@ public register(user : user ): Observable<user>{
   }
 
   getUserById(id : any):Observable<user>{
-    return this.http.get<user>('http://localhost:8094/Campi/User/FindbyIdUser/'+id) ;
+    return this.http.get<user>('http://localhost:8094/Campi/AUTH/auth/FindbyIdUser/'+id) ;
   
   }
 
@@ -57,16 +57,17 @@ banUser(idUser: number, days: number): Observable<user> {
     return this.http.post<any>('http://localhost:8094/Campi/AUTH/auth/authenticate', user);
 }
 
-public EmailUser(Email: any): Observable<user> {
-  return this.http.get<user>('http://localhost:8094/Campi/AUTH/auth/FindbyEmailUser/${Email}' );
+public EmailUser(email: any): Observable<user> {
+  return this.http.get<user>('http://localhost:8094/Campi/AUTH/auth/findByEmail/'+email );
 }
 
 
   parseJwt(){
     const jwtHelper = new JwtHelperService();
     const objJwt= jwtHelper.decodeToken(localStorage.getItem('token')!);
-        if(objJwt.role=='OWNER' || objJwt.role=='CLIENT'|| objJwt.role=='ADMIN'){
-      this.router.navigate(['/user-profile/',objJwt.id])
+    this.id =localStorage.getItem('idUser');
+        if(objJwt.sub!==null){
+      this.router.navigate(['/user-profile/'+this.id])
     }
     else{
       this.router.navigate(['/landing'])

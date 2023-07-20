@@ -1,6 +1,8 @@
 import { Location, PopStateEvent } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { LoginServiceService } from 'src/app/Service/login-service.service';
+import { user } from 'src/app/models/user';
 
 @Component({
     selector: 'app-navbar',
@@ -12,8 +14,9 @@ export class NavbarComponent implements OnInit {
     public isCollapsed = true;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
+    user:user;
 
-    constructor(public location: Location, private router: Router) {
+    constructor(public location: Location, private router: Router , private service: LoginServiceService) {
     }
 
     ngOnInit() {
@@ -53,5 +56,22 @@ export class NavbarComponent implements OnInit {
         else {
             return false;
         }
+    }
+    deconnexion() {
+        this.service.getUserById(localStorage.getItem('idUser')).subscribe((data)=>
+        this.user=data);
+        if(this.service.login(this.user)){
+        localStorage.removeItem('idUser');
+        }
+    }
+    showProfil():boolean{
+      if(localStorage.getItem('LoggedIn')=='true'){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    profil(){
+       return localStorage.getItem('idUser');
     }
 }
