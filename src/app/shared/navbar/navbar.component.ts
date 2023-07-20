@@ -62,6 +62,9 @@ export class NavbarComponent implements OnInit {
         this.user=data);
         if(this.service.login(this.user)){
         localStorage.removeItem('idUser');
+        localStorage.removeItem('token');
+        localStorage.removeItem('LoggedIn');
+
         }
     }
     showProfil():boolean{

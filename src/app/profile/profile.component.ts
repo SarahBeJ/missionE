@@ -23,15 +23,11 @@ export class ProfileComponent implements OnInit {
     const userId = this.acti.snapshot.params['id'];
     this.userService.getUserById(userId).subscribe(
       (userI) => {
-        this.user = userI;
-      },
-      (error) => {
-        console.log(error);
+        this.user = userI
       }
-    );
-  }
+    )}
 
-  detailsUser(id: any): void {}
+
 
   deleteUser(user: user) {
     this.userService.deleteUser(parseFloat(localStorage.getItem('idUser')!)).subscribe(
