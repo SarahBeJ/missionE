@@ -14,6 +14,7 @@ export class LoginServiceService {
   private id :any;
   private data : any ;
   private jsonContent : any ;
+  private email : any;
   
   constructor(private http: HttpClient, private router: Router) { }
   
@@ -56,10 +57,14 @@ banUser(idUser: number, days: number): Observable<user> {
     return this.http.post<any>('http://localhost:8094/Campi/AUTH/auth/authenticate', user);
 }
 
+public EmailUser(Email: any): Observable<user> {
+  return this.http.get<user>('http://localhost:8094/Campi/AUTH/auth/FindbyEmailUser/${Email}' );
+}
+
+
   parseJwt(){
     const jwtHelper = new JwtHelperService();
     const objJwt= jwtHelper.decodeToken(localStorage.getItem('token')!);
-    console.log('eeddddddd' , objJwt.role)
         if(objJwt.role=='OWNER' || objJwt.role=='CLIENT'|| objJwt.role=='ADMIN'){
       this.router.navigate(['/user-profile/',objJwt.id])
     }
