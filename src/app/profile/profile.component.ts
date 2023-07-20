@@ -27,7 +27,9 @@ export class ProfileComponent implements OnInit {
       }
     )}
 
-
+  idUserr(){
+    return localStorage.getItem('idUser')
+  }
 
   deleteUser(user: user) {
     this.userService.deleteUser(parseFloat(localStorage.getItem('idUser')!)).subscribe(

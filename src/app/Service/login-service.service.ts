@@ -25,7 +25,7 @@ public register(user : user ): Observable<user>{
 
   }
   getUsers() :Observable<user[]> {
-    return this.http.get<user[]>('http://localhost:8094/Campi/User/gettAllUsers');
+    return this.http.get<user[]>('http://localhost:8094/Campi/AUTH/auth/getUser');
   }
 
   getUserById(id : any):Observable<user>{
@@ -49,7 +49,7 @@ banUser(idUser: number, days: number): Observable<user> {
 
   private API_URL1 = 'http://localhost:8094/Campi/User';
   updateUser(idUser: any , user :user): Observable<user> {
-    return this.http.put<user>(`${this.API_URL1}/UserUpdate/${idUser}`, user);
+    return this.http.put<user>('http://localhost:8094/Campi/AUTH/auth/UserUpdate/{{id}}',user);
   }
 
 
