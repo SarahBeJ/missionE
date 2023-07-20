@@ -1,0 +1,21 @@
+{
+  "article": [
+    {
+      "id": 1
+    },
+    {
+      "titre": "haha",
+      "description": "hqhs",
+      "prix": 563,
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "etat": "hello",
+      "prixTotal": 500,
+      "id": 4
+    }
+  ]
+}

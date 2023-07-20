@@ -1,0 +1,74 @@
+<p>cart works!</p>
+<p>cart works!</p>
+
+    
+  
+
+
+<div *ngIf="articles.lenght == 0; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+  <div class="container">
+    <div class="card">
+      <h5 class="card-title">Mon panier</h5>
+    </div>
+    <div class="center">
+      <img src="assets/Empty_Shopping_Cart_blog.png" alt="" />
+      <h4>Votre panier est vide</h4>
+      <h6>Ajoutez un produit maintenant</h6>
+      <a routerLink="/">
+        <button class="btn btn-primary">Voir la liste des Produits</button></a
+      >
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #elseBlock>
+    <h1 style="font-family: Arial, sans-serif; font-size: 36px; color: rgb(46, 163, 241); text-align: center; padding: 20px 0;"> Mon Panier </h1>
+  <div class="container" >
+    <table class="table" id="idTable">
+      <thead>
+        <tr> 
+          <th>N°</th>
+          <th>Product name</th>
+          <th>Product Image</th>
+
+          <th>Quantité</th>
+          <th>Price</th>
+          <th>totalItem</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let item of article ; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.titre }}</td>
+        <td><img style="width: 120px" src="{{ item.thumbnail }}" /></td>
+
+        <td>
+          <div class="quantity_container">
+            <button (click)="decrement(i)">-</button>
+            <div id="value">{{ Quantity[i] }}</div>
+            <button (click)="increment(i)">+</button>
+            
+            
+          </div>
+        </td>
+       
+        <td>{{ item.prixTotal }}</td>
+        <td #quantxprix>{{ Quantity[i] * item.prixTotal }}</td>
+
+        <td>
+          <button class="btn btn-danger" (click)="removeCartItem(item)">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
+<!--     <div class="button-container" (click)=MessageCommande()>
+ -->      <div class="button-container">
+
+        <button class="order-button">Commander</button>
+        <button routerLink="/listPro" class="add-button">Ajouter d'autres produits maintenant</button>
+        <button class="remove-button" (click)=removeAllCartItems()>Remove All</button>
+    </div>
+  </div>
+</ng-template>
