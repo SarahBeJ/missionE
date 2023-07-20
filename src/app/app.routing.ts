@@ -8,10 +8,6 @@ import { LoginComponent } from './login/login.component';
 import { PostsComponent } from './posts/posts.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
-import { PublicationListComponent } from './publication-list/publication-list.component';
-import { CreatePublicationComponent } from './create-publication/create-publication.component';
-import { UpdatePublicationComponent } from './update-publication/update-publication.component';
-import { PublicationDetailsComponent } from './publication-details/publication-details.component';
 
 const routes: Routes =[
     { path: 'user-profile/:id',     component: ProfileComponent },
@@ -19,10 +15,11 @@ const routes: Routes =[
     { path: 'landing',          component: LandingComponent },
     { path: 'login',          component: LoginComponent },
     { path: 'post',          component: PostsComponent },
-    {path: 'publications', component: PublicationListComponent},
-    {path: 'create-publication', component: CreatePublicationComponent},
-    {path: 'update-publication/:idPublication', component: UpdatePublicationComponent},
-    {path: 'publication-details/:idPublication', component: PublicationDetailsComponent},
+    {
+      path: 'comping',
+      loadChildren: () => import('./comping-management/comping-management.module').then(m => m.CompingManagementModule)
+    },
+
     { path: '', redirectTo: 'landing', pathMatch: 'full' }
 ];
 
