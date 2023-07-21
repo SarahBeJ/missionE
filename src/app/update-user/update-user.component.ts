@@ -14,12 +14,13 @@ export class UpdateUserComponent implements OnInit {
   constructor(private router : Router , private route : ActivatedRoute , private service : LoginServiceService) { }
 
   ngOnInit(): void {
-    
     this.service.getUserById(this.route.snapshot.params['idt']).subscribe((data:user)=>
-    this.user=data
-    );}
-    
+    this.user=data)
+    this.update();
+    ;}
+
     update(){
+      console.log(this.user);
     this.service.updateUser(this.user.idUser,this.user).subscribe(
       (data) => {
         this.router.navigate(['/user-profil/'+data.idUser]);

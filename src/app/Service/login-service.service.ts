@@ -49,7 +49,7 @@ banUser(idUser: number, days: number): Observable<user> {
 
   private API_URL1 = 'http://localhost:8094/Campi/User';
   updateUser(idUser: any , user :user): Observable<user> {
-    return this.http.put<user>('http://localhost:8094/Campi/AUTH/auth/UserUpdate/{{id}}',user);
+    return this.http.put<user>('http://localhost:8094/Campi/AUTH/auth/UserUpdate/{{idUser}}',user);
   }
 
 
@@ -70,7 +70,7 @@ public EmailUser(email: any): Observable<user> {
       this.router.navigate(['/user-profile/'+this.id])
     }
     else{
-      this.router.navigate(['/landing'])
+      alert('mot de passe ou email incorrecte')
     }
   
 

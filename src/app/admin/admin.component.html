@@ -1,24 +1,40 @@
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<main class="profile-page">
-    <section class="section-profile-cover section-shaped my-0">
-      <!-- Circles background -->
-      <div class="shape shape-style-1 shape-primary alpha-4">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <!-- SVG separator -->
-      <div class="separator separator-bottom separator-skew">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
-      </div>
-     <section>
-        <div *ngFor ='let user of users'>
-            <li>{{user.Username}}</li>
-        </div>
-     </section>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>type</th>
+                <th>   </th>
+                <th>   </th>
+              </tr>
+              
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{ user.nameUser }}</td>
+                <td>{{ user.familyName}}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.userType}}</td>
+                <td><button >Modifier</button></td>
+                <td><button >Modifier</button></td>
+                
+              </tr>
+              <tr class="popup-container">
+                <button (click)="togglePopup()">Ajouter un utilisateur</button>
+                <div class="popup" *ngIf="isPopupOpen">
+                  <h2>Message du Popup</h2>
+                  <p>Ceci est un popup simple créé en utilisant du HTML et des styles Angular!</p>
+                  <button (click)="togglePopup()">Fermer</button>
+                </div>
+              </tr>
+
+            </tbody>
+          </table>

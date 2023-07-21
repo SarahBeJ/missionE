@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     const userId = this.acti.snapshot.params['id'];
+    this.userId = localStorage.getItem('idUser');
     this.userService.getUserById(userId).subscribe(
       (userI) => {
         this.user = userI

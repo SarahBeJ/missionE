@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   loginNow(): void {
     this.service.login(this.user).subscribe((data) => {
       this.service.EmailUser(this.user.email).subscribe((dataa)=>{
-        this.user = dataa ; 
+        this.user = dataa ;
         localStorage.setItem('idUser',this.user.idUser.toString());
         localStorage.setItem('LoggedIn','true');
 
