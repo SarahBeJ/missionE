@@ -14,6 +14,7 @@ export class LoginServiceService {
   private id :any;
   private data : any ;
   private jsonContent : any ;
+  private email : any;
   
   constructor(private http: HttpClient, private router: Router) { }
   
@@ -24,11 +25,11 @@ public register(user : user ): Observable<user>{
 
   }
   getUsers() :Observable<user[]> {
-    return this.http.get<user[]>('http://localhost:8094/Campi/User/gettAllUsers');
+    return this.http.get<user[]>('http://localhost:8094/Campi/AUTH/auth/getUser');
   }
 
   getUserById(id : any):Observable<user>{
-    return this.http.get<user>('http://localhost:8094/Campi/User/FindbyIdUser/'+id) ;
+    return this.http.get<user>('http://localhost:8094/Campi/AUTH/auth/FindbyIdUser/'+id) ;
   
   }
 
@@ -48,7 +49,7 @@ banUser(idUser: number, days: number): Observable<user> {
 
   private API_URL1 = 'http://localhost:8094/Campi/User';
   updateUser(idUser: any , user :user): Observable<user> {
-    return this.http.put<user>(`${this.API_URL1}/UserUpdate/${idUser}`, user);
+    return this.http.put<user>('http://localhost:8094/Campi/AUTH/auth/UserUpdate/{{idUser}}',user);
   }
 
 
@@ -56,15 +57,20 @@ banUser(idUser: number, days: number): Observable<user> {
     return this.http.post<any>('http://localhost:8094/Campi/AUTH/auth/authenticate', user);
 }
 
+public EmailUser(email: any): Observable<user> {
+  return this.http.get<user>('http://localhost:8094/Campi/AUTH/auth/findByEmail/'+email );
+}
+
+
   parseJwt(){
     const jwtHelper = new JwtHelperService();
     const objJwt= jwtHelper.decodeToken(localStorage.getItem('token')!);
-    console.log('eeddddddd' , objJwt.role)
-        if(objJwt.role=='OWNER' || objJwt.role=='CLIENT'|| objJwt.role=='ADMIN'){
-      this.router.navigate(['/user-profile/',objJwt.id])
+    this.id =localStorage.getItem('idUser');
+        if(objJwt.sub!==null){
+      this.router.navigate(['/user-profile/'+this.id])
     }
     else{
-      this.router.navigate(['/landing'])
+      alert('mot de passe ou email incorrecte')
     }
   
 

@@ -21,18 +21,16 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     const userId = this.acti.snapshot.params['id'];
+    this.userId = localStorage.getItem('idUser');
     this.userService.getUserById(userId).subscribe(
-      (userI : user) => {
-        console.log(userI);
-        this.user = userI;
-      },
-      (error) => {
-        console.log(error);
+      (userI) => {
+        this.user = userI
       }
-    );
-  }
+    )}
 
-  detailsUser(id: any): void {}
+  idUserr(){
+    return localStorage.getItem('idUser')
+  }
 
   deleteUser(user: user) {
     this.userService.deleteUser(parseFloat(localStorage.getItem('idUser')!)).subscribe(

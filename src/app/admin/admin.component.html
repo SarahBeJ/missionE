@@ -1,0 +1,40 @@
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>type</th>
+                <th>   </th>
+                <th>   </th>
+              </tr>
+              
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{ user.nameUser }}</td>
+                <td>{{ user.familyName}}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.userType}}</td>
+                <td><button >Modifier</button></td>
+                <td><button >Modifier</button></td>
+                
+              </tr>
+              <tr class="popup-container">
+                <button (click)="togglePopup()">Ajouter un utilisateur</button>
+                <div class="popup" *ngIf="isPopupOpen">
+                  <h2>Message du Popup</h2>
+                  <p>Ceci est un popup simple créé en utilisant du HTML et des styles Angular!</p>
+                  <button (click)="togglePopup()">Fermer</button>
+                </div>
+              </tr>
+
+            </tbody>
+          </table>

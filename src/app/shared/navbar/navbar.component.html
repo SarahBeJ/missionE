@@ -1,7 +1,7 @@
 <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
   <div class="container">
     <a class="navbar-brand mr-lg-5" [routerLink]="['/landing']">
-      <img src="./assets/img/brand/argon-white.png">
+      <img src="./assets/img/brand/png-transparent-adventure-camping-logo.png">
     </a>
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
@@ -74,11 +74,11 @@
             <span class="nav-link-inner--text">Examples</span>
           </a>
           <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile/']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-            <a [routerLink]="['/post']" class="dropdown-item">comments</a>
+            <a [routerLink]="['/landing']" class="dropdown-item">Accueil</a>
+            <a [routerLink]="['/user-profile/'+profil()]" class="dropdown-item" *ngIf="showProfil()==true">Profile</a>
+            <a [routerLink]="['/login']" class="dropdown-item" *ngIf="showProfil()==false">Login</a>
+            <a [routerLink]="['/register']" class="dropdown-item" *ngIf="showProfil()==false">Register</a>
+            <a [routerLink]="['/landing']" class="dropdown-item" (click)="deconnexion()" *ngIf="showProfil()==true">Déconnexion</a>
 
           </div>
         </li>

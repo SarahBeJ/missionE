@@ -31,7 +31,7 @@
             </div>
             <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
               <div class="card-profile-actions py-4 mt-lg-0">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info mr-4">Connect</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-info mr-4" [routerLink]="['/UpdateUser/'+idUserr()]">Modifier mon profile</a>
                 <a href="javascript:void(0)" class="btn btn-sm btn-default float-right">Message</a>
               </div>
             </div>
@@ -53,13 +53,18 @@
             </div>
           </div>
           <div class="text-center mt-5">
+            <h3>Nom : {{this.user.nameUser}}
+              <br> Prenom : {{this.user.familyName}}<br>
+              <span class="font-weight-light"><h3>Date de naissance : {{this.user.birthday| date}}</h3></span>
+
             <h3>{{this.user.firstName}} {{this.user.familyName}}
               <span class="font-weight-light">{{this.user.birthday| date}}</span>
             </h3>
             <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>
-              Bucharest, Romania</div>
-            <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer</div>
-            <div><i class="ni education_hat mr-2"></i>University of Computer Science</div>
+            </div>
+            <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i><h3>Je suis : {{this.user.userType}}</h3></div>
+            <div><i class="ni education_hat mr-2"></i>Numéro de téléphone : +216  {{this.user.phoneNumber}}</div>
+            <div><i class="ni education_hat mr-2"></i>De : {{this.user.adress}}</div>
           </div>
           <div class="mt-5 py-5 border-top text-center">
             <div class="row justify-content-center">
