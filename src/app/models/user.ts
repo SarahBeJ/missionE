@@ -1,7 +1,7 @@
 import { userType } from "./user.type";
 export class user {
 idUser!: number;
-    nameUser!: string;
+    firstName!: string;
     familyName!: string;
     birthday!: string;
     adress!: string;

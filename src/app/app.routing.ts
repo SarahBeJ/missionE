@@ -11,6 +11,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes =[
+    { path: '', redirectTo: 'landing', pathMatch: 'full' },
     { path: 'user-profile/:id', component: ProfileComponent },
     { path: 'register', component: SignupComponent },
     { path: 'landing', component: LandingComponent },
@@ -19,7 +20,10 @@ const routes: Routes =[
     { path: 'admin', component: AdminComponent },
 
 
-    { path: '', redirectTo: 'landing', pathMatch: 'full' }
+      {path: 'comping',
+      loadChildren: () => import('./comping-management/comping-management.module').then(m => m.CompingManagementModule)
+    },
+  
 ];
 
 @NgModule({

@@ -1,0 +1,69 @@
+<main>
+    <section class="section section-shaped">
+      
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-body px-lg-5 py-lg-5">
+                <div class="text-center text-muted mb-4">
+                  <small>Planifier un voyage
+                </small>
+                </div>
+                <div>
+                  <div class="form-group" >
+                    
+                    <div class="input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                        </div>
+                        <select [(ngModel)]="comping.driver" [ngModelOptions]="{standalone: true}" style="width: 64%;">
+                      
+                          <option *ngFor="let driver of drivers" [ngValue]="driver">{{driver.familyName}} {{driver.firstName}}</option>
+                        </select>
+                    
+                      </div>
+                  </div>
+                  <div class="form-group" >
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-bus-front-12"></i></span>
+                      </div>
+                      <input type="number" placeholder="Nombre de place"  [(ngModel)]="comping.placeNumber" [ngModelOptions]="{standalone: true}" [min]="1">
+                    </div>
+                  </div>
+                  <div class="form-group" >
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-time-alarm"></i></span>
+                      </div>
+                      <input type="number" placeholder="Durée de voyage (en jour)" name="" [(ngModel)]="comping.duration" [ngModelOptions]="{standalone: true}">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                        </div>
+                        <input type="date" placeholder="Date départ" name="" [(ngModel)]="comping.start" [ngModelOptions]="{standalone: true}">
+                      </div>
+                  </div>
+                  <div class="form-group" >
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                      </div>
+                      <input type="date" placeholder="Date arrivé" name="" [(ngModel)]="comping.end" [ngModelOptions]="{standalone: true}">
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary mt-4" (click)="add()" routerLink="/login">Planifier</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
